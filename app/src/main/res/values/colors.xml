@@ -3,4 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="peanut_orange">#EFAA82</color>
+    <color name="purple">#C2B8FF</color>
+    <color name="mint">#C9E8E0</color>
 </resources>

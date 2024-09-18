@@ -31,14 +31,15 @@
         android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_sunny_location"
         android:drawablePadding="15dp"
-        android:fontFamily="@font/poppins_medium"
-        android:textSize="40dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="50dp"
+        android:textColor="@color/peanut_orange"
         app:layout_constraintEnd_toEndOf="@+id/searchView"
         app:layout_constraintStart_toStartOf="@+id/searchView"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewDescriptionBox"
         android:layout_width="385dp"
         android:layout_height="390dp"
         android:layout_marginTop="8dp"
@@ -57,87 +58,76 @@
         android:text="Today"
         android:textColor="@color/peanut_orange"
         android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDescriptionBox" />
 
     <TextView
         android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="00°C"
         android:textColor="@color/peanut_orange"
-        android:textSize="80sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageViewSun"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintStart_toEndOf="@+id/imageViewCondition"
         app:layout_constraintTop_toBottomOf="@+id/today" />
-
-    <ImageView
-        android:id="@+id/imageViewSun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/today"
-        app:srcCompat="@drawable/sunny_sun" />
 
     <TextView
         android:id="@+id/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Sunny"
         android:textColor="@color/peanut_orange"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSun" />
-
-    <TextView
-        android:id="@+id/maxTemperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Max: 00°C"
-        android:textColor="@color/peanut_orange"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toEndOf="@+id/weather"
-        app:layout_constraintTop_toBottomOf="@+id/minTemperature" />
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCondition" />
 
     <TextView
         android:id="@+id/minTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Min: 00°C"
         android:textColor="@color/peanut_orange"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toEndOf="@+id/weather"
         app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+    <TextView
+        android:id="@+id/maxTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Max: 00°C"
+        android:textColor="@color/peanut_orange"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toEndOf="@+id/weather"
+        app:layout_constraintTop_toBottomOf="@+id/minTemperature" />
 
     <TextView
         android:id="@+id/day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Friday"
         android:textColor="@color/peanut_orange"
         android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDescriptionBox"
         app:layout_constraintTop_toBottomOf="@+id/maxTemperature" />
 
     <TextView
@@ -149,14 +139,25 @@
         android:text="01 January 2024"
         android:textColor="@color/peanut_orange"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewDescriptionBox"
         app:layout_constraintEnd_toEndOf="@+id/day"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="@+id/day"
         app:layout_constraintTop_toBottomOf="@+id/day"
-        app:layout_constraintVertical_bias="0.21" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageViewCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDescriptionBox"
+        app:layout_constraintTop_toBottomOf="@+id/today"
+        app:srcCompat="@drawable/sunny_sun" />
 
     <FrameLayout
+        android:id="@+id/main_layout"
         android:layout_width="389dp"
         android:layout_height="270dp"
         android:layout_marginStart="40dp"
@@ -166,14 +167,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDescriptionBox">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/linearLayout5"
+                android:id="@+id/layoutHumidity"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -195,7 +196,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Humidity"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -204,14 +205,14 @@
                     android:id="@+id/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="00%"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout3"
+                android:id="@+id/layoutWindSpeed"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -232,7 +233,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Wind Speed"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -241,13 +242,14 @@
                     android:id="@+id/wind_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="0.00 m/s"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layoutCondition"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -269,7 +271,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Condition"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -278,14 +280,14 @@
                     android:id="@+id/condition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="Sunny"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/layoutSunset"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -307,7 +309,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Sunset"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -316,14 +318,14 @@
                     android:id="@+id/sunset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="00.00"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout4"
+                android:id="@+id/layoutSunrise"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -345,7 +347,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Sunrise"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -354,13 +356,14 @@
                     android:id="@+id/sunrise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="00.00"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layoutSeaLevel"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
@@ -382,7 +385,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Sea Level"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
@@ -391,7 +394,7 @@
                     android:id="@+id/sea_level"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
+                    android:fontFamily="@font/poppins_semibold"
                     android:text="0000 hpa"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
