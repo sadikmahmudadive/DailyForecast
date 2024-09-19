@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                 setCityNameIcon(R.drawable.ic_rainey_location)
                 setLayoutBackground(R.drawable.rainey_shape_bg)
             }
-            "Light Rain", "Drizzle", "Haze" ->{
+            "Light Rain", "Drizzle" ->{
                 binding.root.setBackgroundResource(R.drawable.rainy2_background)
                 binding.imageViewCondition.setImageResource(R.drawable.rainey2_cloud)
                 binding.imageViewDescriptionBox.setImageResource(R.drawable.rainey2_box)
@@ -121,6 +121,22 @@ class MainActivity : AppCompatActivity() {
                 changeTextColorRain3(R.color.mint)
                 setCityNameIcon(R.drawable.ic_rainey_location2)
                 setLayoutBackground(R.drawable.rainey_shape_bg3)
+            }
+            "Haze", "Light Snow", "Cold" ->{
+                binding.root.setBackgroundResource(R.drawable.snow_background)
+                binding.imageViewCondition.setImageResource(R.drawable.snow_cloud)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.snow_box)
+                changeTextColorSnow(R.color.light_sky)
+                setCityNameIcon(R.drawable.ic_snow_location)
+                setLayoutBackground(R.drawable.snow_shape_bg)
+            }
+            "Moderate Snow", "Heavy Snow", "Blizzard" ->{
+                binding.root.setBackgroundResource(R.drawable.snow2_background)
+                binding.imageViewCondition.setImageResource(R.drawable.snow2_cloud)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.snow2_box)
+                changeTextColorSnow2(R.color.light_off_white)
+                setCityNameIcon(R.drawable.ic_snow2_location)
+                setLayoutBackground(R.drawable.snow2_shape_bg)
             }
         }
     }
@@ -166,6 +182,29 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeTextColorRain3(mint: Int) {
         val color = resources.getColor(R.color.mint, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
+    private fun changeTextColorSnow(light_sky: Int) {
+        val color = resources.getColor(R.color.light_sky, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+    private fun changeTextColorSnow2(light_off_white: Int) {
+        val color = resources.getColor(R.color.light_off_white, null)
         binding.today.setTextColor(color)
         binding.temperature.setTextColor(color)
         binding.weather.setTextColor(color)

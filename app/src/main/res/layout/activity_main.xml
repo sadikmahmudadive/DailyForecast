@@ -70,7 +70,7 @@
         android:fontFamily="@font/poppins_bold"
         android:text="00°C"
         android:textColor="@color/peanut_orange"
-        android:textSize="60sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/imageViewDescriptionBox"
         app:layout_constraintStart_toEndOf="@+id/imageViewCondition"
         app:layout_constraintTop_toBottomOf="@+id/today" />
