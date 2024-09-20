@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                 setCityNameIcon(R.drawable.ic_rainey_location2)
                 setLayoutBackground(R.drawable.rainey_shape_bg3)
             }
-            "Haze", "Light Snow", "Cold" ->{
+            "Light Snow", "Cold" ->{
                 binding.root.setBackgroundResource(R.drawable.snow_background)
                 binding.imageViewCondition.setImageResource(R.drawable.snow_cloud)
                 binding.imageViewDescriptionBox.setImageResource(R.drawable.snow_box)
@@ -137,6 +137,30 @@ class MainActivity : AppCompatActivity() {
                 changeTextColorSnow2(R.color.light_off_white)
                 setCityNameIcon(R.drawable.ic_snow2_location)
                 setLayoutBackground(R.drawable.snow2_shape_bg)
+            }
+            "Sunny" ->{
+                binding.root.setBackgroundResource(R.drawable.sunny_background)
+                binding.imageViewCondition.setImageResource(R.drawable.sunny_sun)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.sunny_box)
+                changeTextColorSunny(R.color.peanut_orange)
+                setCityNameIcon(R.drawable.ic_sunny_location)
+                setLayoutBackground(R.drawable.sunny_shape_bg)
+            }
+            "Clear Sky", "Clear" ->{
+                binding.root.setBackgroundResource(R.drawable.sunny2_background)
+                binding.imageViewCondition.setImageResource(R.drawable.sunny2_sun)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.sunny2_box)
+                changeTextColorSunny2(R.color.dark_green)
+                setCityNameIcon(R.drawable.ic_sunny2_location)
+                setLayoutBackground(R.drawable.sunny2_shape_bg)
+            }
+            "Haze" ->{
+                binding.root.setBackgroundResource(R.drawable.haze_background)
+                binding.imageViewCondition.setImageResource(R.drawable.haze_cloud)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.haze_box)
+                changeTextColorHaze(R.color.light_sky2)
+                setCityNameIcon(R.drawable.ic_haze_location)
+                setLayoutBackground(R.drawable.haze_shape_bg)
             }
         }
     }
@@ -203,8 +227,45 @@ class MainActivity : AppCompatActivity() {
         binding.day.setTextColor(color)
         binding.date.setTextColor(color)
     }
+
     private fun changeTextColorSnow2(light_off_white: Int) {
         val color = resources.getColor(R.color.light_off_white, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
+    private fun changeTextColorSunny(peanut_orange: Int) {
+        val color = resources.getColor(R.color.peanut_orange, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
+    private fun changeTextColorSunny2(dark_green: Int) {
+        val color = resources.getColor(R.color.dark_green, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
+    private fun changeTextColorHaze(light_sky_2: Int) {
+        val color = resources.getColor(R.color.light_sky2, null)
         binding.today.setTextColor(color)
         binding.temperature.setTextColor(color)
         binding.weather.setTextColor(color)
