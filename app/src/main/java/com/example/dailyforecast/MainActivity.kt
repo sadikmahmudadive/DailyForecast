@@ -65,8 +65,8 @@ class MainActivity : AppCompatActivity() {
                     val temperature = responseBody.main.temp.toString()
                     val humidity = responseBody.main.humidity
                     val windSpeed = responseBody.wind.speed
-                    val sunRise = responseBody.sys.sunrise
-                    val sunSet = responseBody.sys.sunset
+                    val sunRise = responseBody.sys.sunrise.toLong()
+                    val sunSet = responseBody.sys.sunset.toLong()
                     val seaLevel = responseBody.main.pressure
                     val condition = responseBody.weather.firstOrNull()?.main?: "unknown"
                     val maxTemp = responseBody.main.temp_max
@@ -77,8 +77,8 @@ class MainActivity : AppCompatActivity() {
                     binding.minTemperature.text = "Min temp: $minTemp °C"
                     binding.humidity.text = "$humidity %"
                     binding.windSpeed.text = "$windSpeed m/s"
-                    binding.sunrise.text = "$sunRise"
-                    binding.sunset.text = "$sunSet"
+                    binding.sunrise.text = "${time(sunRise)}"
+                    binding.sunset.text = "${time(sunSet)}"
                     binding.seaLevel.text = "$seaLevel hPa"
                     binding.condition.text = condition
                     binding.day.text = dayName(System.currentTimeMillis())
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun changeDesignAccrodingToWeathercondition(conditions : String) {
         when (conditions) {
-            "Heavy Rain", "Rain" ->{
+            "Heavy Rain", "Rain", "Thunderstorm" ->{
                 binding.root.setBackgroundResource(R.drawable.rainy_background)
                 binding.imageViewCondition.setImageResource(R.drawable.rainey_cloud)
                 binding.imageViewDescriptionBox.setImageResource(R.drawable.rainey_box)
@@ -161,6 +161,30 @@ class MainActivity : AppCompatActivity() {
                 changeTextColorHaze(R.color.light_sky2)
                 setCityNameIcon(R.drawable.ic_haze_location)
                 setLayoutBackground(R.drawable.haze_shape_bg)
+            }
+            "Partly Clouds", "Clouds" ->{
+                binding.root.setBackgroundResource(R.drawable.clouds_background)
+                binding.imageViewCondition.setImageResource(R.drawable.clouds_cloud)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.clouds_box)
+                changeTextColorClouds(R.color.light_peanut_orange)
+                setCityNameIcon(R.drawable.ic_clouds_location)
+                setLayoutBackground(R.drawable.clouds_shape_bg)
+            }
+            "Overcast" ->{
+                binding.root.setBackgroundResource(R.drawable.overcast_background)
+                binding.imageViewCondition.setImageResource(R.drawable.overcast_cloud)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.overcast_box)
+                changeTextColorOvercast(R.color.dark_purple)
+                setCityNameIcon(R.drawable.ic_overcast_location)
+                setLayoutBackground(R.drawable.overcast_shape_bg)
+            }
+            "Mist", "Foggy" ->{
+                binding.root.setBackgroundResource(R.drawable.mist_background)
+                binding.imageViewCondition.setImageResource(R.drawable.mist_cloud)
+                binding.imageViewDescriptionBox.setImageResource(R.drawable.mist_box)
+                changeTextColorMist(R.color.dark_sky)
+                setCityNameIcon(R.drawable.ic_mist_location)
+                setLayoutBackground(R.drawable.mist_shape_bg)
             }
         }
     }
@@ -276,9 +300,50 @@ class MainActivity : AppCompatActivity() {
         binding.date.setTextColor(color)
     }
 
+    private fun changeTextColorOvercast(dark_purple: Int) {
+        val color = resources.getColor(R.color.dark_purple, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
+    private fun changeTextColorClouds(light_peanut_orange: Int) {
+        val color = resources.getColor(R.color.light_peanut_orange, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
+    private fun changeTextColorMist(dark_sky: Int) {
+        val color = resources.getColor(R.color.dark_sky, null)
+        binding.today.setTextColor(color)
+        binding.temperature.setTextColor(color)
+        binding.weather.setTextColor(color)
+        binding.maxTemperature.setTextColor(color)
+        binding.minTemperature.setTextColor(color)
+        binding.cityName.setTextColor(color)
+        binding.day.setTextColor(color)
+        binding.date.setTextColor(color)
+    }
+
     private fun date(): String {
         val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.getDefault())
         return sdf.format((Date()))
+    }
+
+    private fun time(timestamp: Long): String {
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault())
+        return sdf.format((Date(timestamp*1000)))
     }
 
     fun dayName(timestamp: Long): String{

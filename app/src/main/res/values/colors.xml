@@ -9,4 +9,7 @@
     <color name="light_off_white">#E2E2E3</color>
     <color name="dark_green">#71A78F</color>
     <color name="light_sky2">#CAD7DF</color>
+    <color name="dark_purple">#484A82</color>
+    <color name="light_peanut_orange">#F6C8A4</color>
+    <color name="dark_sky">#FFAED5E4</color>
 </resources>
