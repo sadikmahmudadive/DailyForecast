@@ -2,6 +2,8 @@
 
 **DailyForecast** is an Android application that provides users with up-to-date weather information. The app fetches data from a weather API to deliver accurate and timely forecasts.
 
+![Weather GIF](https://media.giphy.com/media/3o7WIxAkrBzUdo7lIc/giphy.gif)
+
 ## ✨ Features
 - **Current Weather:** 🌡️ Displays the current temperature, humidity, wind speed, and other relevant weather details.
 - **7-Day Forecast:** 📅 Provides a week-long weather forecast to help users plan ahead.
